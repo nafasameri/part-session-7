@@ -1,11 +1,14 @@
+function copy(a, b) {
+    for (let item in a) {
+        b[item] = a[item];
+    }
+    return b;
+}
+
 function merge(a, b) {
     const c = {};
-    for (let item in a) {
-        c[item] = a[item];
-    }
-    for (let item in b) {
-        c[item] = b[item];
-    }
+    copy(a, c);
+    copy(b, c);
     return c;
 }
 
