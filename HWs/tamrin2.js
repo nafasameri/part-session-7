@@ -1,8 +1,9 @@
 function copy(a, b) {
+    let c = { ...a };
     for (let item in b) {
-        a[item] = b[item];
+        c[item] = b[item];
     }
-    return a;
+    return c;
 }
 
 const a = {
@@ -15,4 +16,6 @@ const b = {
 };
 
 let c = copy(a, b);
+console.log(a);
+console.log(b);
 console.log(c);

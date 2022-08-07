@@ -1,4 +1,4 @@
-function union (...arraies) {
+function union(...arraies) {
     let output = [];
     for (const arr of arraies) {
         output.push(...arr);
@@ -6,7 +6,14 @@ function union (...arraies) {
     return output;
 }
 
-a = [4, 7, 8];
-b = [5, 9, 2, 7];
+const a = [4, 7, 8];
+const b = [5, 9, 2, 7];
+const c = [3, 8, 5, 4, 2];
 
-console.log(union(a, b));
+
+let output = union(a, b, c);
+console.log(output);
+output = output.filter((value, index, array) => {
+    return array.indexOf(value) == index;
+});
+console.log(output);

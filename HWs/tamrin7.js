@@ -1,14 +1,24 @@
-function pathNULL(data) {
-    for (let item in data) {
-        if (data[item] == null || data[item] == undefined)
-            console.log(item + "    ");
-        else if (data[item] == 'value' || data[item] == 'undefined');
-        else 
-            pathNULL(data[item]);
+function printPath(data, item, path) {
+    if (data[item] == null || data[item] == undefined) {
+        path += item;
+        console.log(path);
+    }
+    else if (data[item] == 'value' || data[item] == 'undefined' || data[item] == 'null') {
+        return;
+    }
+    else {
+        const Root = data[item];
+        for (let item2 in Root) {
+            if (Root[item2] == 'value' || Root[item2] == 'undefined' || Root[item2] == 'null' || Root[item2] == null || Root[item2] == undefined);
+            else
+                path += item2 + " ";
+            printPath(Root, item2, path);
+        }
     }
 }
 
-let data = {
+
+const data = {
     key1: 'value',
     key2: {
         key21: 'value',
@@ -71,14 +81,18 @@ let data = {
             },
             key512: undefined,
             key513: {
-
             }
         },
         key52: {},
         key53: null,
         key54: 'value'
-
     }
 };
 
-pathNULL(data);
+for (let item in data) {
+    let path = "";
+    if (data[item] == 'value' || data[item] == 'undefined' || data[item] == 'null' || data[item] == null || data[item] == undefined);
+    else
+        path += item + " ";
+    printPath(data, item, path);
+}
