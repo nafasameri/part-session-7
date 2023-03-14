@@ -89,10 +89,12 @@ const data = {
     }
 };
 
-for (let item in data) {
-    let path = "";
-    if (data[item] == 'value' || data[item] == 'undefined' || data[item] == 'null' || data[item] == null || data[item] == undefined);
-    else
-        path += item + " ";
-    printPath(data, item, path);
-}
+printPath(data, "key1", "");
+
+// for (let item in data) {
+//     let path = "";
+//     if (data[item] == 'value' || data[item] == 'undefined' || data[item] == 'null' || data[item] == null || data[item] == undefined);
+//     else
+//         path += item + " ";
+//     printPath(data, item, path);
+// }
